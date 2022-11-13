@@ -13,36 +13,55 @@
     }
   },
   "scripts": {
-    "codecept": "vendor/bin/codecept",
+    "codecept": [
+      "Composer\\Config::disableProcessTimeout",
+      "vendor/bin/codecept"
+    ],
+    "robo": "vendor/bin/robo",
     "run:wpunit": "vendor/bin/codecept run wpunit",
     "run:functional": "vendor/bin/codecept run functional",
     "run:acceptance": "vendor/bin/codecept run acceptance",
+    "run:api": "vendor/bin/codecept run api",
     "generate:wpunit": "vendor/bin/codecept generate:wpunit wpunit",
     "generate:functional": "vendor/bin/codecept generate:cept functional",
     "generate:acceptance": "vendor/bin/codecept generate:test acceptance",
+    "generate:api": "vendor/bin/codecept generate:test api",
     "phpcs": "./vendor/bin/phpcs"
   },
   "require": {
     "php": ">=7.1",
-    "micropackage/requirements": "^1.0"
+    "ext-curl": "*",
+    "ext-json": "*",
+    "psr/log": "~1.0",  
+    "micropackage/requirements": "^1.0",
+    "oscarotero/env": "2.1",
+    "vlucas/phpdotenv": "^5.4"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
     "wp-coding-standards/wpcs": "*",
     "automattic/phpcs-neutron-ruleset": "^3.3",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
-    "lucatume/function-mocker": "~1.0",
-    "lucatume/wp-browser": "^3.0",
-    "codeception/lib-innerbrowser": "^1.0",
-    "codeception/module-asserts": "^1.0",
-    "codeception/module-phpbrowser": "^1.0",
-    "codeception/module-webdriver": "^1.0",
+    "kint-php/kint": "^4.1",
+    "friendsofphp/php-cs-fixer": "^2.16.1",
+    "roots/wp-config": "1.0.0",
+    "codeception/robo-paracept": "^2.0",
+    "codeception/module-asserts": "^1.0.0",
+    "codeception/module-phpbrowser": "^1.0.0",
+    "codeception/module-webdriver": "^2.0",
     "codeception/module-db": "^1.0",
     "codeception/module-filesystem": "^1.0",
     "codeception/module-cli": "^1.0",
-    "codeception/module-rest": "^1.2",
     "codeception/util-universalframework": "^1.0",
-    "codeception/codeception-progress-reporter": "^4.0.2"
+    "codeception/module-rest": "^1.0",
+    "codeception/lib-innerbrowser": "^1.0",
+    "codeception/codeception-progress-reporter": "^4.0",
+    "codeception/codeception": "4.2.2",
+    "lucatume/wp-browser": "3.0.15",
+    "lucatume/function-mocker": "~1.0",
+    "codeception/module-datafactory": "^2.0",
+    "hoa/console": "^3.17",
+    "allure-framework/allure-codeception": "^1.5"
   },
   "keywords": [
     "wordpress",
@@ -56,5 +75,10 @@
       "email": "hello@wp-strap.com",
       "homepage": "https://wp-strap.com"
     }
-  ]
+  ],
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
 }

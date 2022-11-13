@@ -9,7 +9,8 @@ paths:
 bootstrap: PluginTestsBootstrap.php
 settings:
     colors: true
-    memory_limit: 1024M
+    memory_limit: 2048M
+    log: true
 params:
     - .env.testing
 coverage:
@@ -20,6 +21,8 @@ coverage:
         - src/*
     low_limit: 30
     high_limit: 75
+groups:
+    paracept_*: tests/_data/paracept_*
 extensions:
     enabled:
         - Codeception\ProgressReporter\ProgressReporter
