@@ -33,7 +33,7 @@ class Example {
 		 *
 		 * @see Bootstrap::__construct
 		 */
-		add_filter( 'sgo_css_combine_exclude', [ $this, 'excludeCssCombine' ] );
+//		add_filter( 'sgo_css_combine_exclude', [ $this, 'excludeCssCombine' ] );
 	}
 
 	/**

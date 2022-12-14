@@ -29,3 +29,17 @@ phpcs.xml
 *.sass-cache
 *.lock
 cache
+/assets/public
+# Created by https://www.toptal.com/developers/gitignore/api/intellij+all
+# Edit at https://www.toptal.com/developers/gitignore\?templates\=intellij+all
+
+### Intellij+all Patch ###
+# Ignores the whole .idea folder and all .iml files
+# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
+
+.idea/
+*.iml
+
+tests/_output/*
+tests/_support/_generated/*
+tests/_data/dump.sql

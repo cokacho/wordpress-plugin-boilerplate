@@ -47,15 +47,15 @@ class Templates extends Base {
 		/**
 		 * Example code using the get template function with the use of arguments
 		 */
-		add_action( 'wp_footer', function () {
-			$this->get( 'test-template', null,
-				[
-					'class' => 'user',
-					'data'  =>
-						[ 'text' => 'with arguments' ],
-				]
-			);
-		} );
+//		add_action( 'wp_footer', function () {
+//			$this->get( 'test-template', null,
+//				[
+//					'class' => 'user',
+//					'data'  =>
+//						[ 'text' => 'with arguments' ],
+//				]
+//			);
+//		} );
 	}
 
 	/**

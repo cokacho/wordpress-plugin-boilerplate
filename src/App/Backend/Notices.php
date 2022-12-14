@@ -37,7 +37,7 @@ class Notices extends Base {
 		 *
 		 * Add plugin code here for admin notices specific functions
 		 */
-		add_action( 'admin_notices', [ $this, 'exampleAdminNotice' ] );
+//		add_action( 'admin_notices', [ $this, 'exampleAdminNotice' ] );
 	}
 
 	/**

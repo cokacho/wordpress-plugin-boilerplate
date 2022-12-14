@@ -18,10 +18,12 @@
       "vendor/bin/codecept"
     ],
     "robo": "vendor/bin/robo",
+    "codecept": "vendor/bin/codecept",
+    "run:api": "vendor/bin/codecept run api",
     "run:wpunit": "vendor/bin/codecept run wpunit",
     "run:functional": "vendor/bin/codecept run functional",
     "run:acceptance": "vendor/bin/codecept run acceptance",
-    "run:api": "vendor/bin/codecept run api",
+    "generate:api": "vendor/bin/codecept generate:test api",
     "generate:wpunit": "vendor/bin/codecept generate:wpunit wpunit",
     "generate:functional": "vendor/bin/codecept generate:cept functional",
     "generate:acceptance": "vendor/bin/codecept generate:test acceptance",
@@ -46,22 +48,23 @@
     "friendsofphp/php-cs-fixer": "^2.16.1",
     "roots/wp-config": "1.0.0",
     "codeception/robo-paracept": "^2.0",
-    "codeception/module-asserts": "^1.0.0",
-    "codeception/module-phpbrowser": "^1.0.0",
-    "codeception/module-webdriver": "^2.0",
-    "codeception/module-db": "^1.0",
-    "codeception/module-filesystem": "^1.0",
-    "codeception/module-cli": "^1.0",
-    "codeception/util-universalframework": "^1.0",
-    "codeception/module-rest": "^1.0",
-    "codeception/lib-innerbrowser": "^1.0",
-    "codeception/codeception-progress-reporter": "^4.0",
+    "codeception/module-asserts": "1.3.1",
+    "codeception/module-phpbrowser": "1.0.3",
+    "codeception/module-webdriver": "2.0.4",
+    "codeception/module-db": "1.2.0",
+    "codeception/module-filesystem": "1.0.3",
+    "codeception/module-cli": "1.1.1",
+    "codeception/util-universalframework": "1.0.0",
+    "codeception/module-rest": "1.4.2",
+    "codeception/lib-innerbrowser": "1.5.1",
+    "codeception/codeception-progress-reporter": "4.0.5",
     "codeception/codeception": "4.2.2",
     "lucatume/wp-browser": "3.0.15",
-    "lucatume/function-mocker": "~1.0",
-    "codeception/module-datafactory": "^2.0",
-    "hoa/console": "^3.17",
-    "allure-framework/allure-codeception": "^1.5"
+    "lucatume/function-mocker": "1.3.8",
+    "codeception/module-datafactory": "2.0.0",
+    "codeception/robo-paracept": "2.0.0",
+    "hoa/console": "3.17.05.02",
+    "allure-framework/allure-codeception": "1.5.2"
   },
   "keywords": [
     "wordpress",
@@ -79,6 +82,7 @@
   "config": {
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
-    }
+    },
+    "process-timeout": 0
   }
 }

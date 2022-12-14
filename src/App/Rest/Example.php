@@ -36,9 +36,9 @@ class Example extends Base {
 		 * @see Bootstrap::__construct
 		 */
 
-		if ( class_exists( 'WP_REST_Server' ) ) {
-			add_action( 'rest_api_init', [ $this, 'addPluginRestApi' ] );
-		}
+//		if ( class_exists( 'WP_REST_Server' ) ) {
+//			add_action( 'rest_api_init', [ $this, 'addPluginRestApi' ] );
+//		}
 	}
 
 	/**

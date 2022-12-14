@@ -14,7 +14,7 @@ declare( strict_types = 1 );
 namespace ThePluginName\Common\Traits;
 
 use ThePluginName\Common\Utils\Errors;
-
+use WP_Rewrite;
 /**
  * The requester trait to determine what we request; used to determine
  * which classes we instantiate in the Bootstrap class
@@ -97,10 +97,18 @@ trait Requester {
 	 * @since 1.0.0
 	 */
 	public function isRest(): bool {
-		return defined( 'REST_REQUEST' );
-	}
+        global $wp_rewrite;
+        if ( $wp_rewrite === null ) {
+            $wp_rewrite = new WP_Rewrite();
+        }
+        $rest_url    = wp_parse_url( trailingslashit( rest_url() ) );
+        $current_url = wp_parse_url( add_query_arg( [] ) );
 
-	/**
+        return strpos( $current_url[ 'path' ] ?? '/', $rest_url[ 'path' ], 0 ) === 0;
+    }
+
+
+    /**
 	 * Is cron
 	 *
 	 * @return bool
